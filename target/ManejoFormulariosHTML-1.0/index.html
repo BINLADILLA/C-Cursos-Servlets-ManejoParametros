@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio Formulario</title>
+
+        <!-- a continuacion agrego los links que hacen referencia a los archivos css y de funciones de java script -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- comment el charset utf8 hace reconocer los caracteres especiales como acentos etc-->
+
+        <link rel="stylesheet" type="text/css" href="recursos/estilos.css">
+        <script type="text/javascript" src="recursos/funciones.js"></script>
+    </head>
+    <body>
+        <form name="form1" action="ManejoFormulariosHTML/Servlet" method="post"
+              onsubmit="return validarForma(this)">
+            <!-- ahora agrego los componentes del formulario -->
+            <input type="hidden" name="oculto" value="valorOculto"/> 
+            </input>          
+            <!-- ahora agregamos componentes , primero una tabla --> 
+            <table width="200" id="enfasis-columna"> 
+            <caption>
+                Formulario Registro de Datos
+            </caption>
+               
+            <tr><!-- tr es table row -->
+                <td class="columna"><!-- los td son elementos -->
+                    Usuario:(*)
+                </td>
+                <td>
+                    <input class="default" type="text" name="usuario"
+                           value="Escribir usuario" onfocus="this.select()"/>
+                    <!-- en este caso se agrego el elemento input, de clase default,del tipo texto
+                    ,con el nombre usuario que sera el nombre de recuperacion de este parametro
+                    el atributo de value escribir ususrio indica al cliente que info debe escribir
+                    por ultimo onfocus sirve para cuando se de click en este elemento en automatico se seleccione lo que esta escrito
+                    y asi facilmentepodemos reemplazar el contenido de la caja de texto-->
+                </td>
+            </tr>
+            <tr>  
+                <td class="columna"> 
+                    Password:(*)
+                </td>
+                <td>
+                    <input class="default" type="password" name="password"
+                           onfocus="this.select()"/>
+                </td>
+            </tr>
+
+            <tr>  
+                <td class="columna"> 
+                    Tecnologias de internet:(*)
+                </td>
+                <td>
+                    java <input type="checkbox" name="tecnologia" value="java">
+                    &nbsp;&nbsp;&nbsp;
+                    <!-- en este caso se agrego una caja de checkeo de nombre tecnologia,
+                    de valor java y los anderssons son espacios -->
+                    .net <input type="checkbox" name="tecnologia" value=".net">
+                    &nbsp;&nbsp;&nbsp;
+                    php <input type="checkbox" name="tecnologia" value="php">
+                    &nbsp;&nbsp;&nbsp;
+
+                </td>
+            </tr>
+            <tr>  
+                <td class="columna"> 
+                    Genero:(*)
+                </td>
+                <td>
+                    <!-- aqui se agregaran elementos del tipo radio bottom el cual es una botonera donde haces click -->
+                    Hombre <input type="radio" name="genero" value="H">
+                    &nbsp;&nbsp;&nbsp; 
+                    Mujer <input type="radio" name="genero" value="M">
+
+
+                </td>
+            </tr>
+            <tr>  
+                <td class="columna"> 
+                    Ocupacion:(*)
+                </td>
+                <td>
+                    <select name="ocupacion" class="default">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Profesor</option>
+                        <option value="2">Ingeniero</option>
+                        <option value="3">Jubilado</option>
+                        <option value="4">Otro</option>
+                    </select>
+
+
+                </td>
+            </tr>
+
+            <tr>  
+                <td class="columna"> 
+                    Musica Favorita:(*)
+                </td>
+                <td>
+                    <select name="musica" multiple class="default"><!-- agrege multiple porque se pueden elegir varios elementos -->
+
+                        <option value="rock">rock</option>
+                        <option value="pop">pop</option>
+                        <option value="jazz">jazz</option>
+                    </select>
+
+
+                </td>
+            </tr>
+            <tr>  
+                <td class="columna"> 
+                    Comentarios:
+                </td>
+                <td> <!-- on focus sirve para cuando se haga click se seleccione todo el contenido -->
+                    <textarea name="comentarios" cols="30" rows="2" 
+                              class="default" onfocus=" this.select()" >
+                        escribir un texto
+                    </textarea>
+
+
+                </td>
+            </tr>
+            <!-- por ultimoagregamos los botones para reset y submit -->
+
+            <tr>
+            <tr style="text-align:center">
+                <td>
+                    <input type="reset" value="limpiar" class="default">
+                </td>
+                <td>
+                    <input type="submit" value="enviar" class="default">
+                </td>
+
+                </tr>
+ </table>
+        </form>
+
+    </body>
+</html>
